@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 # Virtual environment
 venv/
@@ -38,5 +39,7 @@ docs/*
 # Cache / temp
 .cache/
 pytest_cache/
+
+
 
 
