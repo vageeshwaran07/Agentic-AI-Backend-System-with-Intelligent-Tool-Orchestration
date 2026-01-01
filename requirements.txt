@@ -2,3 +2,6 @@ fastapi
 uvicorn
 request
 python-dotenv
+pypdf
+langchain 
+duckduckgo-search
