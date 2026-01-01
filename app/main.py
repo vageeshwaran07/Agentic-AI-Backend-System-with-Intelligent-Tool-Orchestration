@@ -1,6 +1,6 @@
-from fastapi import FastAPI
-
-from app.agents import weather_agent, meeting_agent, document_agent, router_agent
+from fastapi import FastAPI, UploadFile, File
+from .agents import weather_agent, meeting_agent, document_agent, router_agent
+from .tools.pdf_loader import load_pdf_text
 
 app = FastAPI()
 
@@ -19,3 +19,16 @@ def ask(query: str):
         return {"response": document_agent.handle(query)}
 
     return {"response": "Sorry, I did not understand your request."}
+
+
+@app.post("/upload")
+async def upload_document(file: UploadFile = File(...)):
+    file_path = f"docs/{file.filename}"
+
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+
+    lines = load_pdf_text(file_path)
+    document_agent.set_document(lines)
+
+    return {"message": "Document uploaded successfully"}

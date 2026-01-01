@@ -1,1 +1,45 @@
-"__pycache__/" 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environment
+venv/
+env/
+.venv/
+agen/Lib/
+agen/Scripts/
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# FastAPI / runtime
+*.pid
+
+# Uploaded documents
+docs/*
+!docs/.gitkeep
+
+# Database files (if any local)
+*.db
+*.sqlite3
+
+# Cache / temp
+.cache/
+pytest_cache/
+
+
+

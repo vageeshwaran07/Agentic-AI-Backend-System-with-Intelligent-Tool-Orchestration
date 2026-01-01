@@ -1,7 +1,10 @@
-fastapi
-uvicorn
-request
-python-dotenv
-pypdf
-langchain 
-duckduckgo-search
+fastapi==0.95.2
+uvicorn==0.22.0
+
+langchain==0.1.234  
+pypdf==3.21.1
+
+python-dotenv==1.0.1
+duckduckgo-search==0.8
+
+requests==2.32.0
