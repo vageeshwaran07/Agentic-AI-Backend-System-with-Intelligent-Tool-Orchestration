@@ -1,13 +1,13 @@
 def router(query: str):
-    query = query.lower()
+    q = query.lower()
 
-    if "weather" in query:
-        return "weather"
-
-    if "meeting" in query:
+    if "schedule" in q or "meeting" in q:
         return "meeting"
 
-    if "document" in query or "policy" in query:
+    if "weather" in q:
+        return "weather"
+
+    if "policy" in q or "document" in q:
         return "document"
 
     return "unknown"
