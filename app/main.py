@@ -1,5 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
-from .agents import weather_agent, meeting_agent, document_agent, router_agent
+from .agents import weather_agent, meeting_agent, document_agent, router_agent, db_agent
 from .tools.pdf_loader import load_pdf_text
 
 app = FastAPI()
@@ -18,6 +18,10 @@ def ask(query: str):
     elif decision == "document":
         return {"response": document_agent.handle(query)}
 
+
+    elif decision == "db":
+        return {"response": db_agent.handle(query)}
+    
     return {"response": "Sorry, I did not understand your request."}
 
 
