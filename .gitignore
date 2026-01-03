@@ -45,3 +45,4 @@ pytest_cache/
 
 agen/Include/
 agen/pyvenv.cfg
+.env 
